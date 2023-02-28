@@ -13,12 +13,14 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.only(right: 100, top: 20, left: 30),
         child: Column(children: [
           TextField(
             onChanged: (value) {},
             decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: 'Email/Username'),
+                icon: Icon(Icons.person),
+                border: UnderlineInputBorder(),
+                hintText: 'Email/Username'),
           ),
           SizedBox(
             height: 20,
@@ -29,7 +31,9 @@ class HomeView extends GetView<HomeController> {
             },
             obscureText: true,
             decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: 'Password'),
+                icon: Icon(Icons.lock),
+                border: UnderlineInputBorder(),
+                hintText: 'Password'),
           ),
           SizedBox(
             height: 20,
