@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  var password = ''.obs;
-  var displayText = 'Enter a password'.obs;
-  var passwordStrength = 0.0.obs;
+  RxString password = ''.obs;
+  RxString displayText = 'Enter a password'.obs;
+  RxDouble passwordStrength = 0.0.obs;
   RegExp numRegExpress = RegExp(r".*[0-9].*");
   RegExp letterRegExpress = RegExp(r".*[A-Za-z].*");
 
