@@ -31,15 +31,28 @@ class HomeView extends GetView<HomeController> {
             SizedBox(
               height: 20,
             ),
-            TextField(
-              onChanged: (value) {
-                controller.checkPasswordStregth(value);
-              },
-              obscureText: true,
-              decoration: const InputDecoration(
-                  icon: Icon(Icons.lock),
-                  border: UnderlineInputBorder(),
-                  hintText: 'Password'),
+            Obx(
+              () => TextField(
+                onChanged: (value) {
+                  controller.checkPasswordStregth(value);
+                },
+                obscureText: controller.isPasswordHidden.value,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.lock),
+                    border: UnderlineInputBorder(),
+                    hintText: 'Password',
+                    suffix: InkWell(
+                      child: Icon(
+                        Icons.visibility,
+                        color: Colors.grey,
+                        size: 20,
+                      ),
+                      onTap: () {
+                        controller.isPasswordHidden.value =
+                            !controller.isPasswordHidden.value;
+                      },
+                    )),
+              ),
             ),
             // Obx(
             //   () => LinearProgressIndicator(

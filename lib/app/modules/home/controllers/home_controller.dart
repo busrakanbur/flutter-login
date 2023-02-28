@@ -6,6 +6,7 @@ class HomeController extends GetxController {
   RxDouble passwordStrength = 0.0.obs;
   RegExp numRegExpress = RegExp(r".*[0-9].*");
   RegExp letterRegExpress = RegExp(r".*[A-Za-z].*");
+  RxBool isPasswordHidden = true.obs;
 
   @override
   void onInit() {
