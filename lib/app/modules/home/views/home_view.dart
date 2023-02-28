@@ -19,7 +19,7 @@ class HomeView extends GetView<HomeController> {
           height: Get.height,
           width: Get.width,
           padding: EdgeInsets.symmetric(horizontal: 60),
-          color: Color.fromARGB(255, 95, 127, 142),
+          color: Color.fromARGB(255, 190, 198, 202),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             TextField(
               onChanged: (value) {},
@@ -43,7 +43,9 @@ class HomeView extends GetView<HomeController> {
                     hintText: 'Password',
                     suffix: InkWell(
                       child: Icon(
-                        Icons.visibility,
+                        controller.isPasswordHidden.value
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                         color: Colors.grey,
                         size: 20,
                       ),
